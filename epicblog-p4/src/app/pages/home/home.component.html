@@ -1,0 +1,44 @@
+<div class="container mb-3">
+  <!-- featured-post-component -->
+  <div class="app-featured-post my-5"></div>
+</div>
+<div class="container">
+  <h3>Tutti i post</h3>
+  <app-tags-menu (onClickOutput)="filterPost($event)"></app-tags-menu>
+  <div class="row g-3">
+    <div *ngFor="let post of posts" class="col-3">
+      <app-single-post [post]="post">
+        <button
+          slot="1"
+          class="btn btn-danger btn-sm px-2"
+          (click)="showForm()"
+        >
+          Modifica
+        </button>
+        <form slot="2" *ngIf="show" class="form-control d-flex mt-3">
+          <input
+            [(ngModel)]="post.id"
+            class="form-control"
+            type="number"
+            name="id"
+            placeholder="post id"
+          />
+          <input
+            [(ngModel)]="post.title"
+            class="form-control"
+            type="text"
+            name="title"
+            placeholder="post title"
+          />
+          <input
+            [(ngModel)]="post.body"
+            class="form-control"
+            type="text"
+            name="body"
+            placeholder="post body"
+          />
+        </form>
+      </app-single-post>
+    </div>
+  </div>
+</div>

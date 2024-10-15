@@ -1,0 +1,15 @@
+<div class="d-flex align-content-center py-3 mb-2">
+  <h5 class="flex-grow-1">FILTER BY:</h5>
+  <ul class="d-flex nav">
+    <li
+      *ngFor="let tag of tags"
+      [ngClass]="{
+        'bg-success': isClicked && target === tag
+      }"
+      class="d-flex align-items-center bg-secondary text-light py-1 px-3 mx-1 fs-7 rounded-pill"
+      (click)="emitTag(tag); isClicked = true"
+    >
+      {{ tag }}
+    </li>
+  </ul>
+</div>

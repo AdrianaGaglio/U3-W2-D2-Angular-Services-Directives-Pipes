@@ -1,0 +1,11 @@
+<div *ngIf="post" class="container">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body }}</p>
+  <div>
+    <span
+      class="mx-1 d-inline-block px-1 text-success btn-outline-success border border-1 border-success fs-7 fw-lighter fw-normal rounded-pill"
+      *ngFor="let tag of post.tags"
+      >{{ tag }}</span
+    >
+  </div>
+</div>

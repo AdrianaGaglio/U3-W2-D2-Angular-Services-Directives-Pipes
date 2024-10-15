@@ -1,0 +1,22 @@
+<div *ngIf="featuredPost" class="bg-body-tertiary p-3 rounded-2 shadow-sm">
+  <h4>{{ featuredPost.title }}</h4>
+  <p>{{ featuredPost.body | truncate : 150 }}</p>
+
+  <div class="d-flex justify-content-between">
+    <div>
+      <span
+        class="mx-1 d-inline-block py-1 px-2 text-success btn-outline-success border border-1 border-success fs-7 fw-lighter fw-normal rounded-pill"
+        *ngFor="let tag of featuredPost.tags"
+        >{{ tag }}</span
+      >
+    </div>
+    <button
+      class="btn btn-danger btn-sm"
+      [routerLink]="['/post-detail', featuredPost.id]"
+    >
+      Read more
+    </button>
+  </div>
+</div>
+<!-- related-posts-component -->
+<app-related-posts></app-related-posts>

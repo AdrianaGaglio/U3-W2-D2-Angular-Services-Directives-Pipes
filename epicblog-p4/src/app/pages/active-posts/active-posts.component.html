@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row g-3">
+    <div class="col-4" *ngFor="let post of activePosts">
+      <app-single-post [post]="post"></app-single-post>
+    </div>
+  </div>
+</div>

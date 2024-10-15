@@ -1,0 +1,10 @@
+<div class="container my-5">
+  <div *ngIf="relatedPosts.length > 0">
+    <h5 class="mb-3">Potrebbero piacerti questi post</h5>
+    <div class="row row-cols-4 g-2">
+      <div class="col" *ngFor="let post of relatedPosts">
+        <app-single-post [post]="post"></app-single-post>
+      </div>
+    </div>
+  </div>
+</div>
